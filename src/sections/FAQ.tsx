@@ -46,7 +46,7 @@ const FAQ: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary mb-4">
               {t('faq.label')}
             </p>
             <h2
@@ -74,14 +74,14 @@ const FAQ: React.FC = () => {
                   className="w-full flex items-center justify-between p-5 text-left group"
                   aria-expanded={openIndex === index}
                 >
-                  <span className="text-foreground font-medium pr-4 group-hover:text-[#388BFF] transition-colors duration-300">
+                  <span className="text-foreground font-medium pr-4 group-hover:text-primary transition-colors duration-300">
                     {item.question}
                   </span>
                   <span
                     className={`flex-shrink-0 w-8 h-8 rounded-full flex items-center justify-center transition-all duration-300 ${
                       openIndex === index
-                        ? 'bg-[#388BFF] text-foreground'
-                        : 'bg-[#388BFF]/10 text-[#388BFF]'
+                        ? 'bg-primary text-foreground'
+                        : 'bg-primary/10 text-primary'
                     }`}
                   >
                     {openIndex === index ? (
@@ -102,8 +102,8 @@ const FAQ: React.FC = () => {
                       className="overflow-hidden"
                     >
                       <div className="px-5 pb-5">
-                        <div className="h-px bg-[#388BFF]/10 mb-4" />
-                        <p className="text-sm text-[#A9D2FF] leading-relaxed">
+                        <div className="h-px bg-primary/10 mb-4" />
+                        <p className="text-sm text-primary leading-relaxed">
                           {item.answer}
                         </p>
                       </div>

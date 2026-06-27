@@ -41,7 +41,7 @@ const Projects: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
           >
             {t('projects.label')}
           </motion.p>
@@ -49,8 +49,8 @@ const Projects: React.FC = () => {
           <motion.h2
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight mb-6"
+            transition={{ duration: 0.5}}
+            className="text-4xl md:text-5xl lg:text-6xl font-bold text-text leading-tight mb-6"
             style={{ letterSpacing: '-1.5px' }}
           >
             {t('projects.title')}
@@ -59,8 +59,8 @@ const Projects: React.FC = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-[#A9D2FF]"
+            transition={{ duration: 0.5 }}
+            className="text-lg text-primary leading-relaxed"
           >
             {t('projects.subtitle')}
           </motion.p>
@@ -73,7 +73,7 @@ const Projects: React.FC = () => {
               key={project.title}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.3 + index * 0.2 }}
+              transition={{ duration: 0.5}}
               whileHover={{ y: -10 }}
               className="group relative glass-card rounded-2xl overflow-hidden cursor-pointer"
             >
@@ -103,22 +103,22 @@ const Projects: React.FC = () => {
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="text-xs px-2.5 py-1 rounded-full bg-[#388BFF]/10 text-[#A9D2FF] border border-[#388BFF]/20"
+                      className="text-xs px-2.5 py-1 rounded-full bg-[#388BFF]/10 text-text border border-[#388BFF]/20"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-[#388BFF] transition-colors duration-300">
+                <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-primary transition-colors duration-300">
                   {project.title}
                 </h3>
 
-                <p className="text-sm text-[#A9D2FF] leading-relaxed mb-4">
+                <p className="text-sm text-text leading-relaxed mb-4">
                   {project.description}
                 </p>
 
-                <div className="flex items-center gap-2 text-[#388BFF] group-hover:gap-3 transition-all duration-300">
+                <div className="flex items-center gap-2 text-primary group-hover:gap-3 transition-all duration-300">
                   <span className="text-sm font-medium">{t('projects.viewProject')}</span>
                   <FiArrowUpRight className="w-4 h-4 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform duration-300" />
                 </div>

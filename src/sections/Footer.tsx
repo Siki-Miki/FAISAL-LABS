@@ -13,7 +13,7 @@ const Footer: React.FC = () => {
   return (
     <footer className="relative pt-20 pb-8 overflow-hidden">
       {/* Top border */}
-      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-[#388BFF]/30 to-transparent" />
+      <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 
       {/* Background glow */}
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[400px] pointer-events-none opacity-20"
@@ -29,9 +29,9 @@ const Footer: React.FC = () => {
               whileHover={{ scale: 1.02 }}
               className="text-2xl font-bold text-foreground mb-4 cursor-default"
             >
-              FAISAL <span className="text-[#388BFF]">LABS</span>
+              FAISAL <span className="text-primary">LABS</span>
             </motion.h3>
-            <p className="text-[#A9D2FF] max-w-sm mb-6">
+            <p className="text-primary/100 max-w-sm mb-6">
               {t('footer.tagline')}
             </p>
             <div className="flex gap-3">
@@ -39,38 +39,38 @@ const Footer: React.FC = () => {
                 href="#"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 rounded-full bg-[#388BFF]/10 flex items-center justify-center
-                           hover:bg-[#388BFF]/30 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center
+                           hover:bg-primary/30 transition-colors duration-300"
                 aria-label="GitHub"
               >
-                <FiGithub className="w-5 h-5 text-[#A9D2FF]" />
+                <FiGithub className="w-5 h-5 text-text" />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 rounded-full bg-[#388BFF]/10 flex items-center justify-center
-                           hover:bg-[#388BFF]/30 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center
+                           hover:bg-primary/30 transition-colors duration-300"
                 aria-label="LinkedIn"
               >
-                <FiLinkedin className="w-5 h-5 text-[#A9D2FF]" />
+                <FiLinkedin className="w-5 h-5 text-text" />
               </motion.a>
               <motion.a
                 href="#"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
-                className="w-10 h-10 rounded-full bg-[#388BFF]/10 flex items-center justify-center
-                           hover:bg-[#388BFF]/30 transition-colors duration-300"
+                className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center
+                           hover:bg-primary/30 transition-colors duration-300"
                 aria-label="Twitter"
               >
-                <FiTwitter className="w-5 h-5 text-[#A9D2FF]" />
+                <FiTwitter className="w-5 h-5 text-text" />
               </motion.a>
             </div>
           </div>
 
           {/* Links */}
           <div>
-            <h4 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-medium text-primary uppercase tracking-wider mb-4">
               Company
             </h4>
             <ul className="space-y-3">
@@ -78,7 +78,7 @@ const Footer: React.FC = () => {
                 <li key={item}>
                   <button
                     onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-[#A9D2FF] hover:text-[#388BFF] transition-colors duration-300 text-sm"
+                    className="text-text hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {item}
                   </button>
@@ -89,7 +89,7 @@ const Footer: React.FC = () => {
 
           {/* More Links */}
           <div>
-            <h4 className="text-sm font-medium text-foreground uppercase tracking-wider mb-4">
+            <h4 className="text-sm font-medium text-primary uppercase tracking-wider mb-4">
               Resources
             </h4>
             <ul className="space-y-3">
@@ -97,7 +97,7 @@ const Footer: React.FC = () => {
                 <li key={item}>
                   <button
                     onClick={() => document.getElementById(item.toLowerCase())?.scrollIntoView({ behavior: 'smooth' })}
-                    className="text-[#A9D2FF] hover:text-[#388BFF] transition-colors duration-300 text-sm"
+                    className="text-text hover:text-primary transition-colors duration-300 text-sm"
                   >
                     {item}
                   </button>
@@ -108,18 +108,18 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="h-px bg-gradient-to-r from-transparent via-[#388BFF]/20 to-transparent mb-8" />
+        <div className="h-px bg-gradient-to-r from-transparent via-primary/20 to-transparent mb-8" />
 
         <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          <p className="text-sm text-[#A9D2FF]/60">
+          <p className="text-sm text-text/60">
             {t('footer.rights')}
           </p>
 
           <div className="flex items-center gap-6">
-            <button className="text-sm text-[#A9D2FF]/60 hover:text-[#388BFF] transition-colors duration-300">
+            <button className="text-sm text-text/60 hover:text-primary transition-colors duration-300">
               {t('footer.links.privacy')}
             </button>
-            <button className="text-sm text-[#A9D2FF]/60 hover:text-[#388BFF] transition-colors duration-300">
+            <button className="text-sm text-text/60 hover:text-primary transition-colors duration-300">
               {t('footer.links.terms')}
             </button>
 
@@ -127,8 +127,8 @@ const Footer: React.FC = () => {
               onClick={scrollToTop}
               whileHover={{ scale: 1.1, y: -2 }}
               whileTap={{ scale: 0.9 }}
-              className="w-10 h-10 rounded-full bg-[#388BFF]/10 flex items-center justify-center
-                         hover:bg-[#388BFF]/30 transition-colors duration-300 ml-4"
+              className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center
+                         hover:bg-primary/30 transition-colors duration-300 ml-4"
               aria-label={t('scrollToTop')}
             >
               <FiArrowUp className="w-5 h-5 text-[#A9D2FF]" />

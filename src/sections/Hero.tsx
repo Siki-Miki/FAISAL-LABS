@@ -8,8 +8,6 @@ interface Particle {
   vx: number;
   vy: number;
   radius: number;
-  alpha: number;
-  baseAlpha: number;
 }
 
 const Hero: React.FC = () => {
@@ -26,26 +24,25 @@ const Hero: React.FC = () => {
 
     let animationFrameId: number;
     let particles: Particle[] = [];
-    const mouse = { x: null as number | null, y: null as number | null, radius: 180 };
+    
+    // كبرنا دائرة تفاعل الماوس لتعطي تأثير سحب أجمل
+    const mouse = { x: null as number | null, y: null as number | null, radius: 250 };
 
-    // إعداد الجزيئات بأبعاد وعمق متفاوت
     const initParticles = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       
-      const particleCount = Math.min(Math.floor((width * height) / 6000), 160);
+      // قللنا العدد شوي لحتى نخفف الضغط لأنو رح نرسم خطوط بيناتهم
+      const particleCount = Math.min(Math.floor((width * height) / 8000), 100);
       
       particles = [];
       for (let i = 0; i < particleCount; i++) {
-        const baseAlpha = Math.random() * 0.4 + 0.2;
         particles.push({
           x: Math.random() * width,
           y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.35,
-          vy: (Math.random() - 0.5) * 0.35,
-          radius: Math.random() * 2.5 + 0.6,
-          alpha: baseAlpha,
-          baseAlpha: baseAlpha,
+          vx: (Math.random() - 0.5) * 0.5,
+          vy: (Math.random() - 0.5) * 0.5,
+          radius: Math.random() * 2 + 1,
         });
       }
     };
@@ -77,53 +74,71 @@ const Hero: React.FC = () => {
     window.addEventListener('mousemove', handleMouseMove);
     canvas.addEventListener('mouseleave', handleMouseLeave);
 
-    // حلقة الحركة الذكية والموفرة للطاقة
     const animate = () => {
       const width = window.innerWidth;
       const height = window.innerHeight;
       ctx.clearRect(0, 0, width, height);
 
-      // قراءة لون النص الحالي المتغير ديناميكياً حسب الثيم النشط بالصفحة
+      // جبنا اللون مرة وحدة برا اللوب مشان الأداء
       const computedStyle = getComputedStyle(canvas);
-      const currentTextColor = computedStyle.getPropertyValue('--color-text').trim();
+      const rawColor = computedStyle.getPropertyValue('--color-text').trim() || '#ffffff';
+      
+      // تحويل اللون لـ RGB لحتى نتحكم بشفافية الخطوط (هاد السطر بيفترض إنك عم تستخدم HEX أو متصفح بيدعم تحويل الألوان، للسهولة استخدمنا لون رمادي محايد فخم للخطوط)
+      const lineColor = '150, 150, 150'; 
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
 
-        // التفاعل الفيزيائي المرن مع الماوس
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = mouse.x - p.x;
-          const dy = mouse.y - p.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-          
-          if (dist < mouse.radius) {
-            const force = (mouse.radius - dist) / mouse.radius;
-            p.x -= (dx / dist) * force * 1.6;
-            p.y -= (dy / dist) * force * 1.6;
-            p.alpha = Math.min(p.baseAlpha + force * 0.4, 0.85);
-          } else {
-            p.alpha += (p.baseAlpha - p.alpha) * 0.04;
-          }
-        } else {
-          p.alpha += (p.baseAlpha - p.alpha) * 0.04;
-        }
-
         p.x += p.vx;
         p.y += p.vy;
 
-        if (p.x < 0) p.x = width;
-        if (p.x > width) p.x = 0;
-        if (p.y < 0) p.y = height;
-        if (p.y > height) p.y = 0;
+        // ارتداد مرن من الحواف بدل الاختفاء والظهور
+        if (p.x < 0 || p.x > width) p.vx *= -1;
+        if (p.y < 0 || p.y > height) p.vy *= -1;
 
-        // رسم النقطة بالاعتماد الكامل على المتغير الحالي وتطبيق الالفا بسلاسة وبدون تعارض متصفحات
+        // رسم النقطة
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.save();
-        ctx.globalAlpha = p.alpha;
-        ctx.fillStyle = currentTextColor || '#ffffff';
+        ctx.fillStyle = rawColor;
         ctx.fill();
-        ctx.restore();
+
+        // رسم الخطوط الهندسية بين النقاط المتقاربة
+        for (let j = i + 1; j < particles.length; j++) {
+          const p2 = particles[j];
+          const dx = p.x - p2.x;
+          const dy = p.y - p2.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          // إذا كانت المسافة قريبة، ارسم خط بشفافية متدرجة
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${lineColor}, ${1 - dist / 120})`;
+            ctx.lineWidth = 0.8;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.stroke();
+          }
+        }
+
+        // تفاعل الماوس: رسم خطوط من الماوس للنقاط القريبة (بيعطي إحساس إنك عم تسحب طاقة أو شبكة)
+        if (mouse.x !== null && mouse.y !== null) {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+
+          if (dist < mouse.radius) {
+            ctx.beginPath();
+            ctx.strokeStyle = `rgba(${lineColor}, ${(1 - dist / mouse.radius) * 0.5})`;
+            ctx.lineWidth = 1;
+            ctx.moveTo(p.x, p.y);
+            ctx.lineTo(mouse.x, mouse.y);
+            ctx.stroke();
+            
+            // سحب خفيف للنقاط باتجاه الماوس
+            p.x -= dx * 0.001;
+            p.y -= dy * 0.001;
+          }
+        }
       }
 
       animationFrameId = requestAnimationFrame(animate);
@@ -150,7 +165,6 @@ const Hero: React.FC = () => {
         className="absolute top-0 left-0 w-full h-full z-[1]"
       />
 
-      {/* Subtle overlay shading */}
       <div className="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-b from-transparent to-transparent" />
 
       {/* Content Layer */}

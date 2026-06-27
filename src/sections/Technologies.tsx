@@ -35,7 +35,7 @@ const Technologies: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
           >
             {t('technologies.label')}
           </motion.p>
@@ -54,7 +54,7 @@ const Technologies: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-[#A9D2FF]"
+            className="text-lg text-primary leading-relaxed"
           >
             {t('technologies.subtitle')}
           </motion.p>
@@ -71,10 +71,10 @@ const Technologies: React.FC = () => {
               whileHover={{ scale: 1.05, y: -3 }}
               className="glass-card rounded-xl p-4 text-center group cursor-default"
             >
-              <p className="text-sm font-medium text-foreground group-hover:text-[#388BFF] transition-colors duration-300">
+              <p className="text-sm font-medium text-foreground group-hover:text-primary transition-colors duration-300">
                 {tech.name}
               </p>
-              <p className="text-xs text-[#A9D2FF]/60 mt-1">{tech.category}</p>
+              <p className="text-xs text-primary/100 mt-1">{tech.category}</p>
             </motion.div>
           ))}
         </div>

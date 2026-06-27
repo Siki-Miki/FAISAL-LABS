@@ -79,7 +79,7 @@ const Statistics: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
           >
             {t('statistics.label')}
           </motion.p>
@@ -118,7 +118,7 @@ const Statistics: React.FC = () => {
                   </>
                 )}
               </div>
-              <p className="text-sm text-[#A9D2FF] uppercase tracking-wider">{stat.label}</p>
+              <p className="text-sm text-text uppercase tracking-wider">{stat.label}</p>
             </motion.div>
           ))}
         </div>

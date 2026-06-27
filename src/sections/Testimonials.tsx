@@ -44,7 +44,7 @@ const Testimonials: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
           >
             {t('testimonials.label')}
           </motion.p>
@@ -63,7 +63,7 @@ const Testimonials: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-[#A9D2FF]"
+            className="text-lg text-primary leading-relaxed"
           >
             {t('testimonials.subtitle')}
           </motion.p>
@@ -76,31 +76,31 @@ const Testimonials: React.FC = () => {
               key={testimonial.name}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.3 + index * 0.15 }}
+              transition={{ duration: 0.5}}
               whileHover={{ y: -5 }}
               className="glass-card rounded-2xl p-6 md:p-8 group"
             >
               {/* Rating */}
               <div className="flex gap-1 mb-5">
                 {Array.from({ length: testimonial.rating }).map((_, i) => (
-                  <FiStar key={i} className="w-4 h-4 text-[#388BFF] fill-[#388BFF]" />
+                  <FiStar key={i} className="w-4 h-4 text-primary fill-primary" />
                 ))}
               </div>
 
               {/* Quote */}
-              <p className="text-[#A9D2FF] text-sm leading-relaxed mb-6">
+              <p className="text-text text-sm leading-relaxed mb-6">
                 &ldquo;{testimonial.content}&rdquo;
               </p>
 
               {/* Author */}
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-[#388BFF]/30 to-[#388BFF]/10
-                                flex items-center justify-center text-sm font-bold text-[#388BFF]">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary/30 to-primary/10
+                                flex items-center justify-center text-sm font-bold text-primary">
                   {testimonial.name.charAt(0)}
                 </div>
                 <div>
                   <p className="text-foreground text-sm font-medium">{testimonial.name}</p>
-                  <p className="text-[#A9D2FF]/60 text-xs">
+                  <p className="text-primary/60 text-xs">
                     {testimonial.role} · {testimonial.company}
                   </p>
                 </div>

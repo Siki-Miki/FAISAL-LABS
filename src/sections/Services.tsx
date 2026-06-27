@@ -71,7 +71,7 @@ const Services: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
           >
             {t('services.label')}
           </motion.p>
@@ -90,7 +90,7 @@ const Services: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-[#A9D2FF]"
+            className="text-lg text-primary leading-relaxed"
           >
             {t('services.subtitle')}
           </motion.p>
@@ -117,17 +117,17 @@ const Services: React.FC = () => {
                 {/* Content */}
                 <div className="relative z-10">
                   <div
-                    className="w-14 h-14 rounded-xl bg-[#388BFF]/10 flex items-center justify-center mb-6
-                                group-hover:bg-[#388BFF]/20 group-hover:scale-110 transition-all duration-300"
+                    className="w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center mb-6
+                                group-hover:bg-primary/20 group-hover:scale-110 transition-all duration-300"
                   >
-                    <service.icon className="w-7 h-7 text-[#388BFF]" />
+                    <service.icon className="w-7 h-7 text-primary" />
                   </div>
 
-                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-[#388BFF] transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-foreground mb-3 group-hover:text-primary transition-colors duration-300">
                     {service.title}
                   </h3>
 
-                  <p className="text-sm text-[#A9D2FF] leading-relaxed">
+                  <p className="text-sm text-primary leading-relaxed">
                     {service.description}
                   </p>
                 </div>

@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <p className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4">
+            <p className="text-sm uppercase tracking-[0.3em] text-primary mb-4">
               {t('contact.label')}
             </p>
 
@@ -52,7 +52,7 @@ const Contact: React.FC = () => {
               {t('contact.title')}
             </h2>
 
-            <p className="text-lg text-[#A9D2FF] mb-10 max-w-md">
+            <p className="text-lg text-primary mb-10 max-w-md">
               {t('contact.subtitle')}
             </p>
 
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
                   <FiMail className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-xs text-[#A9D2FF]/60 uppercase tracking-wider mb-1">
+                  <p className="text-xs text-primary/60 uppercase tracking-wider mb-1">
                     Email
                   </p>
                   <p className="text-foreground font-medium">{t('contact.info.email')}</p>
@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                   <FiMapPin className="w-5 h-5 text-primary" />
                 </div>
                 <div>
-                  <p className="text-xs bg-primary/60 uppercase tracking-wider mb-1">
+                  <p className="text-xs text-primary/60 uppercase tracking-wider mb-1">
                     Location
                   </p>
                   <p className="text-foreground font-medium">{t('contact.info.location')}</p>
@@ -108,7 +108,7 @@ const Contact: React.FC = () => {
                 <>
                   <div className="grid sm:grid-cols-2 gap-5">
                     <div>
-                      <label className="block text-sm text-[#A9D2FF] mb-2">
+                      <label className="block text-sm text-primary/100 mb-2">
                         {t('contact.form.name')}
                       </label>
                       <input
@@ -117,14 +117,14 @@ const Contact: React.FC = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-[#388BFF]/20
-                                   text-foreground placeholder-[#A9D2FF]/40 focus:outline-none focus:border-[#388BFF]/50
-                                   focus:ring-1 focus:ring-[#388BFF]/30 transition-all duration-300"
+                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-primary/20
+                                   text-foreground placeholder-text/40 focus:outline-none focus:border-primary/50
+                                   focus:ring-1 focus:ring-primary/30 transition-all duration-300"
                         placeholder="John Doe"
                       />
                     </div>
                     <div>
-                      <label className="block text-sm text-[#A9D2FF] mb-2">
+                      <label className="block text-sm text-primary/100 mb-2">
                         {t('contact.form.email')}
                       </label>
                       <input
@@ -133,16 +133,16 @@ const Contact: React.FC = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-[#388BFF]/20
-                                   text-foreground placeholder-[#A9D2FF]/40 focus:outline-none focus:border-[#388BFF]/50
-                                   focus:ring-1 focus:ring-[#388BFF]/30 transition-all duration-300"
+                        className="w-full px-4 py-3 rounded-lg bg-white/5 border border-primary/20
+                                   text-foreground placeholder-text/40 focus:outline-none focus:border-primary/50
+                                   focus:ring-1 focus:ring-primary/30 transition-all duration-300"
                         placeholder="john@example.com"
                       />
                     </div>
                   </div>
 
                   <div>
-                    <label className="block text-sm text-[#A9D2FF] mb-2">
+                    <label className="block text-sm text-primary/100 mb-2">
                       {t('contact.form.subject')}
                     </label>
                     <input
@@ -151,15 +151,15 @@ const Contact: React.FC = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-[#388BFF]/20
-                                 text-foreground placeholder-[#A9D2FF]/40 focus:outline-none focus:border-[#388BFF]/50
-                                 focus:ring-1 focus:ring-[#388BFF]/30 transition-all duration-300"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-primary/20
+                                 text-foreground placeholder-text/40 focus:outline-none focus:border-primary/50
+                                 focus:ring-1 focus:ring-primary/30 transition-all duration-300"
                       placeholder="Project Inquiry"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-sm text-[#A9D2FF] mb-2">
+                    <label className="block text-sm text-primary/100 mb-2">
                       {t('contact.form.message')}
                     </label>
                     <textarea
@@ -168,9 +168,9 @@ const Contact: React.FC = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-[#388BFF]/20
-                                 text-foreground placeholder-[#A9D2FF]/40 focus:outline-none focus:border-[#388BFF]/50
-                                 focus:ring-1 focus:ring-[#388BFF]/30 transition-all duration-300 resize-none"
+                      className="w-full px-4 py-3 rounded-lg bg-white/5 border border-primary/20
+                                 text-foreground placeholder-text/40 focus:outline-none focus:border-primary/50
+                                 focus:ring-1 focus:ring-primary/30 transition-all duration-300 resize-none"
                       placeholder="Tell us about your project..."
                     />
                   </div>

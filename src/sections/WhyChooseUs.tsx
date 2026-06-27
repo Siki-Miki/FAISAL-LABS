@@ -41,7 +41,7 @@ const WhyChooseUs: React.FC = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6 }}
-              className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+              className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
             >
               {t('whyUs.label')}
             </motion.p>
@@ -63,7 +63,7 @@ const WhyChooseUs: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="flex items-end"
           >
-            <p className="text-lg text-[#A9D2FF] lg:pb-2">
+            <p className="text-lg text-primary lg:pb-2">
               {t('whyUs.subtitle')}
             </p>
           </motion.div>
@@ -79,20 +79,20 @@ const WhyChooseUs: React.FC = () => {
               transition={{ duration: 0.6, delay: 0.5 + index * 0.15 }}
               className="group"
             >
-              <div className="flex gap-6 p-6 rounded-xl transition-all duration-300 hover:bg-white/5">
+              <div className="flex gap-6 p-6 rounded-xl transition-all duration-300 hover:bg-primary/10">
                 <div
-                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-[#388BFF]/20 to-[#388BFF]/5
-                              flex items-center justify-center group-hover:from-[#388BFF]/30 group-hover:to-[#388BFF]/10
+                  className="flex-shrink-0 w-14 h-14 rounded-xl bg-gradient-to-br from-primary/20 to-[primary]/5
+                              flex items-center justify-center group-hover:from-primary/30 group-hover:to-primary/10
                               transition-all duration-300"
                 >
-                  <item.icon className="w-6 h-6 text-[#388BFF]" />
+                  <item.icon className="w-6 h-6 text-primary" />
                 </div>
 
                 <div>
-                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-[#388BFF] transition-colors duration-300">
+                  <h3 className="text-xl font-semibold text-foreground mb-2 group-hover:text-[primary] transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-sm text-[#A9D2FF] leading-relaxed">
+                  <p className="text-sm text-text leading-relaxed">
                     {item.description}
                   </p>
                 </div>

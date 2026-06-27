@@ -31,7 +31,7 @@ const Team: React.FC = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
-            className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+            className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
           >
             {t('team.label')}
           </motion.p>
@@ -49,8 +49,8 @@ const Team: React.FC = () => {
           <motion.p
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="text-lg text-[#A9D2FF]"
+            transition={{ duration: 0.1, delay: 0.4 }}
+            className="text-lg text-primary leading-relaxed"
           >
             {t('team.subtitle')}
           </motion.p>
@@ -63,7 +63,7 @@ const Team: React.FC = () => {
               key={member.name}
               initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.7, delay: 0.5 + index * 0.2 }}
+              transition={{ duration: 0.5}}
               whileHover={{ y: -5 }}
               className="glass-card rounded-2xl overflow-hidden max-w-md w-full group"
             >
@@ -95,8 +95,8 @@ const Team: React.FC = () => {
               {/* Content */}
               <div className="p-6 md:p-8 text-center">
                 <h3 className="text-2xl font-bold text-foreground mb-1">{member.name}</h3>
-                <p className="text-[#388BFF] text-sm font-medium mb-4">{member.role}</p>
-                <p className="text-sm text-[#A9D2FF] leading-relaxed mb-6">{member.bio}</p>
+                <p className="text-primary text-sm font-medium mb-4">{member.role}</p>
+                <p className="text-sm text-text leading-relaxed mb-6">{member.bio}</p>
 
                 {/* Social Links */}
                 <div className="flex justify-center gap-4">
@@ -108,7 +108,7 @@ const Team: React.FC = () => {
                                hover:bg-[#388BFF]/30 transition-colors duration-300"
                     aria-label="GitHub"
                   >
-                    <FiGithub className="w-5 h-5 text-[#A9D2FF]" />
+                    <FiGithub className="w-5 h-5 text-text" />
                   </motion.a>
                   <motion.a
                     href={member.socials.linkedin}
@@ -118,7 +118,7 @@ const Team: React.FC = () => {
                                hover:bg-[#388BFF]/30 transition-colors duration-300"
                     aria-label="LinkedIn"
                   >
-                    <FiLinkedin className="w-5 h-5 text-[#A9D2FF]" />
+                    <FiLinkedin className="w-5 h-5 text-text" />
                   </motion.a>
                   <motion.a
                     href={member.socials.twitter}
@@ -128,7 +128,7 @@ const Team: React.FC = () => {
                                hover:bg-[#388BFF]/30 transition-colors duration-300"
                     aria-label="Twitter"
                   >
-                    <FiTwitter className="w-5 h-5 text-[#A9D2FF]" />
+                    <FiTwitter className="w-5 h-5 text-text" />
                   </motion.a>
                 </div>
               </div>

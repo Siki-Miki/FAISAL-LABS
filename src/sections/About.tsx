@@ -34,7 +34,7 @@ const About: React.FC = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-sm uppercase tracking-[0.3em] text-[#388BFF] mb-4"
+          className="text-sm uppercase tracking-[0.3em] text-primary mb-4"
         >
           {t('about.label')}
         </motion.p>
@@ -62,7 +62,7 @@ const About: React.FC = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="lg:pt-4"
           >
-            <p className="text-lg text-[#A9D2FF] leading-relaxed mb-6">
+            <p className="text-lg text-primary leading-relaxed mb-6">
               {t('about.description')}
             </p>
             <p className="text-base text-foreground/70 leading-relaxed">
@@ -87,7 +87,7 @@ const About: React.FC = () => {
               key={value.title}
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 + index * 0.15 }}
+              transition={{ duration: 0.3}}
               whileHover={{ y: -5 }}
               className="glass-card rounded-xl p-6 md:p-8 group cursor-default"
             >

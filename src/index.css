@@ -38,7 +38,6 @@
 
     /* Hex Variables */
     --color-bg: #09090b;
-    --bg2: #fff;
     --color-surface: #121214;
     --color-primary: #3b82f6;
     --color-accent: #60a5fa;
@@ -74,7 +73,6 @@
 
     /* Hex Variables - متناسقة تماماً مع قيم الـ HSL المحدثة */
     --color-bg: #dee2e6;
-    --bg2: #000;
     --color-surface: #f1f3f5;
     --color-primary: #2563eb;
     --color-accent: #3b82f6;
