@@ -1,0 +1,191 @@
+{
+  "nav": {
+    "platform": "Platform",
+    "solutions": "Solutions",
+    "research": "Research",
+    "about": "About",
+    "careers": "Careers",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "headline": "Protecting the Future",
+    "subtitle": "Advanced AI-driven cybersecurity and threat intelligence for the modern enterprise.",
+    "ctaPrimary": "Discover Our Solutions",
+    "ctaSecondary": "Learn More"
+  },
+  "about": {
+    "label": "ABOUT US",
+    "title": "Engineering Tomorrow",
+    "description": "Faisal Labs is a research-driven technology company specializing in cybersecurity, artificial intelligence, and cloud infrastructure. Founded in 2021, we build intelligent defense systems that protect organizations against evolving digital threats.",
+    "mission": "Our mission is to democratize enterprise-grade security through accessible, AI-powered solutions that adapt in real-time to emerging threats.",
+    "values": {
+      "title": "Our Core Values",
+      "innovation": "Relentless Innovation",
+      "innovationDesc": "Pushing boundaries in AI and security research",
+      "integrity": "Ethical Integrity",
+      "integrityDesc": "Responsible AI development with transparency",
+      "excellence": "Technical Excellence",
+      "excellenceDesc": "Engineering solutions that stand the test of time"
+    }
+  },
+  "services": {
+    "label": "WHAT WE DO",
+    "title": "Our Expertise",
+    "subtitle": "Comprehensive technology solutions powered by cutting-edge research",
+    "cybersecurity": {
+      "title": "Cybersecurity",
+      "description": "Enterprise-grade threat detection, penetration testing, and security architecture for organizations of all sizes."
+    },
+    "ai": {
+      "title": "Artificial Intelligence",
+      "description": "Custom AI model development, machine learning pipelines, and intelligent automation systems."
+    },
+    "software": {
+      "title": "Software Development",
+      "description": "Full-stack application development using modern frameworks and cloud-native architectures."
+    },
+    "cloud": {
+      "title": "Cloud Solutions",
+      "description": "Multi-cloud infrastructure design, migration strategies, and DevOps automation."
+    },
+    "transformation": {
+      "title": "Digital Transformation",
+      "description": "Strategic consulting and implementation to modernize legacy systems and workflows."
+    },
+    "research": {
+      "title": "Innovation Lab",
+      "description": "R&D in quantum-safe cryptography, adversarial ML, and next-generation security protocols."
+    }
+  },
+  "whyUs": {
+    "label": "WHY CHOOSE US",
+    "title": "Built for the Future",
+    "subtitle": "What sets our approach apart",
+    "items": {
+      "aiPowered": {
+        "title": "AI-Powered Defense",
+        "description": "Self-learning systems that adapt to new threats in real-time, reducing response time from hours to milliseconds."
+      },
+      "expertise": {
+        "title": "Research-First Approach",
+        "description": "Every solution is backed by peer-reviewed research and rigorous testing protocols."
+      },
+      "scalable": {
+        "title": "Infinitely Scalable",
+        "description": "Cloud-native architectures designed to grow with your organization without performance degradation."
+      },
+      "support": {
+        "title": "24/7 Expert Support",
+        "description": "Dedicated security engineers available around the clock for critical incident response."
+      }
+    }
+  },
+  "technologies": {
+    "label": "TECH STACK",
+    "title": "Technologies We Master",
+    "subtitle": "Modern tools for modern problems"
+  },
+  "statistics": {
+    "label": "BY THE NUMBERS",
+    "title": "Impact at Scale",
+    "projects": "Projects Delivered",
+    "uptime": "Uptime Guaranteed",
+    "response": "Incident Response",
+    "countries": "Countries Served"
+  },
+  "projects": {
+    "label": "FEATURED WORK",
+    "title": "Selected Projects",
+    "subtitle": "Real solutions for real challenges",
+    "viewProject": "View Project",
+    "items": {
+      "shield": {
+        "title": "Shield AI",
+        "description": "Autonomous threat detection platform processing 2M+ events daily for financial institutions."
+      },
+      "nexus": {
+        "title": "Nexus Cloud",
+        "description": "Zero-trust cloud security framework adopted by 150+ enterprise clients across three continents."
+      },
+      "cortex": {
+        "title": "Cortex Analytics",
+        "description": "Real-time security analytics dashboard with predictive modeling and automated reporting."
+      }
+    }
+  },
+  "team": {
+    "label": "OUR TEAM",
+    "title": "Meet the Minds",
+    "subtitle": "Driven by curiosity, guided by expertise",
+    "founder": {
+      "name": "Faisal",
+      "role": "Founder & Lead Developer",
+      "bio": "Full-stack developer and security researcher with a passion for building intelligent systems that make the digital world safer."
+    }
+  },
+  "testimonials": {
+    "label": "TESTIMONIALS",
+    "title": "Client Stories",
+    "subtitle": "Trusted by forward-thinking organizations"
+  },
+  "faq": {
+    "label": "FAQ",
+    "title": "Common Questions",
+    "questions": {
+      "q1": {
+        "question": "What industries do you specialize in?",
+        "answer": "We work across fintech, healthcare, government, and critical infrastructure sectors. Our adaptive AI models are trained on diverse threat landscapes to provide industry-specific protection."
+      },
+      "q2": {
+        "question": "How does your pricing model work?",
+        "answer": "We offer flexible subscription tiers based on infrastructure size and security requirements. Enterprise clients receive custom quotes with dedicated support SLAs."
+      },
+      "q3": {
+        "question": "What is your incident response time?",
+        "answer": "Our AI-driven systems respond to known threats in under 10 milliseconds. For novel threats requiring human analysis, our team responds within 15 minutes, 24/7."
+      },
+      "q4": {
+        "question": "Do you offer on-premises solutions?",
+        "answer": "Yes. We provide both cloud-native and air-gapped on-premises deployments for organizations with strict compliance requirements."
+      },
+      "q5": {
+        "question": "How do you handle data privacy?",
+        "answer": "All data processing follows zero-knowledge architecture where possible. We are SOC 2 Type II certified and GDPR compliant. Client data never leaves your environment unless explicitly authorized."
+      }
+    }
+  },
+  "contact": {
+    "label": "GET IN TOUCH",
+    "title": "Start a Conversation",
+    "subtitle": "Ready to secure your digital infrastructure? Let's discuss how we can help.",
+    "form": {
+      "name": "Full Name",
+      "email": "Email Address",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message",
+      "success": "Message sent successfully! We'll get back to you soon."
+    },
+    "info": {
+      "title": "Contact Information",
+      "email": "hello@faisallabs.tech",
+      "location": "Global · Remote-First"
+    }
+  },
+  "footer": {
+    "company": "Faisal Labs",
+    "tagline": "Engineering Tomorrow.",
+    "rights": "© 2024 Faisal Labs. All rights reserved.",
+    "links": {
+      "privacy": "Privacy Policy",
+      "terms": "Terms of Service"
+    }
+  },
+  "loading": "Loading...",
+  "scrollToTop": "Back to top",
+  "language": "Language",
+  "theme": {
+    "dark": "Dark",
+    "light": "Light"
+  }
+}
