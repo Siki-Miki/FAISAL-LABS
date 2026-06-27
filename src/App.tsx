@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next'; // 1. هذا الاستيراد هو ما كان ينقصك
 import { ThemeProvider } from '@/contexts/ThemeContext';
 import Navigation from '@/components/Navigation';
 import LoadingScreen from '@/components/LoadingScreen';
@@ -18,10 +19,20 @@ import Contact from '@/sections/Contact';
 import Footer from '@/sections/Footer';
 
 const App: React.FC = () => {
+  const { i18n } = useTranslation(); // 2. هذا السطر يعطيك الوصول للغة الحالية
   const [loading, setLoading] = useState(true);
 
+  // تحديث اتجاه الموقع واللغة تلقائياً
   useEffect(() => {
-    // Prevent scroll during loading
+    document.documentElement.dir = i18n.language === 'ar' ? 'rtl' : 'ltr';
+    document.documentElement.lang = i18n.language;
+  }, [i18n.language]);
+
+  // تحديد الخط بناءً على اللغة
+  const fontClass = i18n.language === 'ar' ? 'font-cairo' : 
+                    i18n.language === 'ru' ? 'font-roboto' : 'font-inter';
+
+  useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden';
     } else {
@@ -36,7 +47,7 @@ const App: React.FC = () => {
     <ThemeProvider>
       {loading && <LoadingScreen onComplete={() => setLoading(false)} />}
 
-      <div className={`transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'}`}>
+      <div className={`transition-opacity duration-700 ${loading ? 'opacity-0' : 'opacity-100'} ${fontClass}`}>
         <ScrollProgress />
         <Navigation />
 
