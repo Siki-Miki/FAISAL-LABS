@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import InteractiveCanvas from './InteractiveCanvas';
 import { FiGithub, FiLinkedin, FiTwitter, FiArrowUp } from 'react-icons/fi';
 
 const Footer: React.FC = () => {
@@ -12,6 +13,7 @@ const Footer: React.FC = () => {
 
   return (
     <footer className="relative pt-20 pb-8 overflow-hidden">
+      <InteractiveCanvas />
       {/* Top border */}
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
 

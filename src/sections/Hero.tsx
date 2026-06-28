@@ -1,157 +1,16 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
-
-interface Particle {
-  x: number;
-  y: number;
-  vx: number;
-  vy: number;
-  radius: number;
-}
+// 1. استدعاء الأنميشن من الملف المشترك
+import InteractiveCanvas from './InteractiveCanvas';
 
 const Hero: React.FC = () => {
   const { t } = useTranslation();
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    let animationFrameId: number;
-    let particles: Particle[] = [];
-    
-    // كبرنا دائرة تفاعل الماوس لتعطي تأثير سحب أجمل
-    const mouse = { x: null as number | null, y: null as number | null, radius: 250 };
-
-    const initParticles = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      
-      // قللنا العدد شوي لحتى نخفف الضغط لأنو رح نرسم خطوط بيناتهم
-      const particleCount = Math.min(Math.floor((width * height) / 8000), 100);
-      
-      particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: Math.random() * width,
-          y: Math.random() * height,
-          vx: (Math.random() - 0.5) * 0.5,
-          vy: (Math.random() - 0.5) * 0.5,
-          radius: Math.random() * 2 + 1,
-        });
-      }
-    };
-
-    const resizeCanvas = () => {
-      const dpr = window.devicePixelRatio || 1;
-      canvas.width = window.innerWidth * dpr;
-      canvas.height = window.innerHeight * dpr;
-      ctx.scale(dpr, dpr);
-      initParticles();
-    };
-
-    resizeCanvas();
+    // تركنا فقط هذا السطر لضمان عمل أنميشن النصوص والأزرار بسلاسة عند تحميل الصفحة
     setIsLoaded(true);
-
-    window.addEventListener('resize', resizeCanvas);
-
-    const handleMouseMove = (e: MouseEvent) => {
-      const rect = canvas.getBoundingClientRect();
-      mouse.x = e.clientX - rect.left;
-      mouse.y = e.clientY - rect.top;
-    };
-
-    const handleMouseLeave = () => {
-      mouse.x = null;
-      mouse.y = null;
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    canvas.addEventListener('mouseleave', handleMouseLeave);
-
-    const animate = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      ctx.clearRect(0, 0, width, height);
-
-      // جبنا اللون مرة وحدة برا اللوب مشان الأداء
-      const computedStyle = getComputedStyle(canvas);
-      const rawColor = computedStyle.getPropertyValue('--color-text').trim() || '#ffffff';
-      
-      // تحويل اللون لـ RGB لحتى نتحكم بشفافية الخطوط (هاد السطر بيفترض إنك عم تستخدم HEX أو متصفح بيدعم تحويل الألوان، للسهولة استخدمنا لون رمادي محايد فخم للخطوط)
-      const lineColor = '150, 150, 150'; 
-
-      for (let i = 0; i < particles.length; i++) {
-        const p = particles[i];
-
-        p.x += p.vx;
-        p.y += p.vy;
-
-        // ارتداد مرن من الحواف بدل الاختفاء والظهور
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-
-        // رسم النقطة
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
-        ctx.fillStyle = rawColor;
-        ctx.fill();
-
-        // رسم الخطوط الهندسية بين النقاط المتقاربة
-        for (let j = i + 1; j < particles.length; j++) {
-          const p2 = particles[j];
-          const dx = p.x - p2.x;
-          const dy = p.y - p2.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          // إذا كانت المسافة قريبة، ارسم خط بشفافية متدرجة
-          if (dist < 120) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(${lineColor}, ${1 - dist / 120})`;
-            ctx.lineWidth = 0.8;
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.stroke();
-          }
-        }
-
-        // تفاعل الماوس: رسم خطوط من الماوس للنقاط القريبة (بيعطي إحساس إنك عم تسحب طاقة أو شبكة)
-        if (mouse.x !== null && mouse.y !== null) {
-          const dx = p.x - mouse.x;
-          const dy = p.y - mouse.y;
-          const dist = Math.sqrt(dx * dx + dy * dy);
-
-          if (dist < mouse.radius) {
-            ctx.beginPath();
-            ctx.strokeStyle = `rgba(${lineColor}, ${(1 - dist / mouse.radius) * 0.5})`;
-            ctx.lineWidth = 1;
-            ctx.moveTo(p.x, p.y);
-            ctx.lineTo(mouse.x, mouse.y);
-            ctx.stroke();
-            
-            // سحب خفيف للنقاط باتجاه الماوس
-            p.x -= dx * 0.001;
-            p.y -= dy * 0.001;
-          }
-        }
-      }
-
-      animationFrameId = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      cancelAnimationFrame(animationFrameId);
-      window.removeEventListener('resize', resizeCanvas);
-      window.removeEventListener('mousemove', handleMouseMove);
-      canvas.removeEventListener('mouseleave', handleMouseLeave);
-    };
   }, []);
 
   return (
@@ -159,11 +18,8 @@ const Hero: React.FC = () => {
       id="hero" 
       className="relative w-full h-screen overflow-hidden bg-transparent text-[var(--color-text)] transition-colors duration-500"
     >
-      {/* Background Interactive Canvas */}
-      <canvas
-        ref={canvasRef}
-        className="absolute top-0 left-0 w-full h-full z-[1]"
-      />
+      {/* 2. وضع الكومبوننت الجديد هنا ليكون في الخلفية */}
+      <InteractiveCanvas />
 
       <div className="absolute inset-0 z-[2] pointer-events-none bg-gradient-to-b from-transparent to-transparent" />
 
