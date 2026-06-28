@@ -71,7 +71,7 @@ const InteractiveCanvas: React.FC = () => {
 
       const computedStyle = getComputedStyle(canvas);
       const rawColor = computedStyle.getPropertyValue('--color-text').trim() || '#ffffff';
-      const lineColor = '150, 150, 150'; 
+      const lineColor = '77,99, 235'; 
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];
@@ -114,8 +114,8 @@ const InteractiveCanvas: React.FC = () => {
             ctx.moveTo(p.x, p.y);
             ctx.lineTo(mouse.x, mouse.y);
             ctx.stroke();
-            p.x -= dx * 0.001;
-            p.y -= dy * 0.001;
+            p.x -= dx * 0.0015;
+            p.y -= dy * 0.0015;
           }
         }
       }
@@ -136,7 +136,6 @@ const InteractiveCanvas: React.FC = () => {
     <canvas
       ref={canvasRef}
       className="absolute top-0 left-0 w-full h-full z-[1] pointer-events-none" 
-      // ملاحظة: ضفنا pointer-events-none عشان ما يحجب الضغط عن الأزرار اللي فوقه بالسيكشن الجديد
     />
   );
 };

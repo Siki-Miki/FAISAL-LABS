@@ -38,7 +38,7 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex gap-3">
               <motion.a
-                href="#"
+                href="https://github.com/SikiMiki"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center
@@ -48,7 +48,7 @@ const Footer: React.FC = () => {
                 <FiGithub className="w-5 h-5 text-text" />
               </motion.a>
               <motion.a
-                href="#"
+                href=""
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center
@@ -58,7 +58,7 @@ const Footer: React.FC = () => {
                 <FiLinkedin className="w-5 h-5 text-text" />
               </motion.a>
               <motion.a
-                href="#"
+                href="https://x.com/alicoo_abboud"
                 whileHover={{ scale: 1.15, y: -2 }}
                 whileTap={{ scale: 0.9 }}
                 className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center

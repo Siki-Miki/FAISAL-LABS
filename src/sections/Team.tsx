@@ -13,11 +13,10 @@ const Team: React.FC = () => {
       name: t('team.founder.name'),
       role: t('team.founder.role'),
       bio: t('team.founder.bio'),
-      image: '/assets/faisal-avatar.jpg',
       socials: {
-        github: '#',
-        linkedin: '#',
-        twitter: '#',
+        github: 'https://github.com/SikiMiki',
+        linkedin: 'https://www.linkedin.com/in/ali-abboud-228578409/',
+        twitter: 'https://x.com/alicoo_abboud',
       },
     },
   ];
