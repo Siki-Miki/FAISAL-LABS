@@ -1,28 +1,28 @@
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Noto+Sans+JP:wght@100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 @layer base {
   :root {
-    /* 🌌 Dark Mode - Deep Space Premium */
-    --background: 240 10% 4%;      /* أسود عميق جداً #09090b */
-    --foreground: 0 0% 98%;        /* أبيض ناصع للنصوص #fafafa */
+   
+    --background: 240 10% 4%;      
+    --foreground: 0 0% 98%;       
     
-    --card: 240 10% 6%;            /* كروت أفتح بدرجة لا تذكر للعمق */
+    --card: 240 10% 6%;            
     --card-foreground: 0 0% 98%;
     
     --popover: 240 10% 6%;
     --popover-foreground: 0 0% 98%;
     
-    --primary: 217 91% 60%;        /* أزرق كهربائي مشع #3b82f6 */
+    --primary: 217 91% 60%;        
     --primary-foreground: 0 0% 98%;
     
     --secondary: 240 10% 12%;
     --secondary-foreground: 0 0% 98%;
     
     --muted: 240 10% 12%;
-    --muted-foreground: 240 5% 65%; /* رمادي أنيق للنصوص الفرعية */
+    --muted-foreground: 240 5% 65%; 
     
     --accent: 217 91% 60%;
     --accent-foreground: 0 0% 98%;
@@ -36,46 +36,44 @@
     --radius: 0.75rem;
 
     /* Hex Variables */
-    --color-bg: #09090b;
+    --color-bg: #0F172A;
     --color-surface: #121214;
     --color-primary: #3b82f6;
     --color-accent: #60a5fa;
-    --color-text: #fafafa;
+    --color-text: #E5E7EB;
   }
 
   .light {
-    /* 🪙 Matte Slate Grey - رمادي تيك فخم وحاد التباين */
-    --background: 215 15% 89%;     /* #dee2e6 - خلفية رمادية واضحة وصريحة لتبرز النصوص الناعمة */
-    --foreground: 222 47% 11%;     /* #0f172a - أسود كحلي حاد جداً وعميق للنصوص الرئيسية */
     
-    --card: 215 20% 95%;           /* #f1f3f5 - كروت بلون رمادي فاتح متميز */
+    --background: 215 15% 89%;     
+    --foreground: 222 47% 11%;    
+    
+    --card: 215 20% 95%;          
     --card-foreground: 222 47% 11%;
     
     --popover: 215 20% 95%;
     --popover-foreground: 222 47% 11%;
     
-    --primary: 221 83% 53%;        /* #2563eb - الأزرق الملكي القوي للبراند */
+    --primary: 221 83% 53%;       
     --primary-foreground: 0 0% 100%;
     
     --secondary: 215 15% 80%;
     --secondary-foreground: 222 47% 11%;
     
     --muted: 215 15% 80%;
-    --muted-foreground: 222 47% 25%; /* #1e293b - تعميق الرمادي الفرعي ليصير داكن ومقروء جداً حتى لو الخط ناعم */
-    
+    --muted-foreground: 222 47% 25%; 
     --accent: 221 83% 53%;
     --accent-foreground: 0 0% 100%;
     
-    --border: 215 15% 75%;         /* حدود أغمق لتفصل العناصر بنقاء */
+    --border: 215 15% 75%;       
     --input: 215 15% 75%;
     --ring: 221 83% 53%;
 
-    /* Hex Variables - متناسقة تماماً مع قيم الـ HSL المحدثة */
-    --color-bg: #dee2e6;
+    --color-bg: #E5E7EB;
     --color-surface: #f1f3f5;
     --color-primary: #2563eb;
     --color-accent: #3b82f6;
-    --color-text: #0f172a;
+    --color-text: #0F172A;
   }
 
 

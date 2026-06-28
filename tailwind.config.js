@@ -6,9 +6,10 @@ module.exports = {
     extend: {
       // هنا تمت إضافة الخطوط
       fontFamily: {
-        inter: ["Inter", "sans-serif"],
-        cairo: ["Cairo", "sans-serif"],
-        roboto: ["Roboto", "sans-serif"],
+        'cairo': ['Cairo', 'Inter', 'sans-serif'],
+        'roboto': ['Roboto', 'Inter', 'sans-serif'],
+        'noto-sans-jp': ['Noto Sans JP', 'Inter', 'sans-serif'],
+        'inter': ['Inter', 'sans-serif'],
       },
       colors: {
         border: "hsl(var(--border))",

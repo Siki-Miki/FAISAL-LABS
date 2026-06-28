@@ -67,7 +67,7 @@ const Technologies: React.FC = () => {
               key={tech.name}
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.5, delay: 0.1 + index * 0.05 }}
+              transition={{ duration: 0.5}}
               whileHover={{ scale: 1.05, y: -3 }}
               className="glass-card rounded-xl p-4 text-center group cursor-default"
             >

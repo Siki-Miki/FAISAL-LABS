@@ -30,8 +30,8 @@ const App: React.FC = () => {
 
   // تحديد الخط بناءً على اللغة
   const fontClass = i18n.language === 'ar' ? 'font-cairo' : 
-                    i18n.language === 'ru' ? 'font-roboto' : 'font-inter';
-
+                    i18n.language === 'ru' ? 'font-roboto':
+                    i18n.language === 'jp' ? 'font-noto-sans-jp' : 'font-inter';
   useEffect(() => {
     if (loading) {
       document.body.style.overflow = 'hidden';

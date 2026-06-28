@@ -26,6 +26,7 @@ const Navigation: React.FC = () => {
     { code: 'en', label: 'English', flag: 'EN' },
     { code: 'ar', label: 'العربية', flag: 'AR' },
     { code: 'ru', label: 'Русский', flag: 'RU' },
+    { code: 'jp', label: '日本語', flag: 'JP' },
   ];
 
   useEffect(() => {

@@ -71,7 +71,7 @@ const InteractiveCanvas: React.FC = () => {
 
       const computedStyle = getComputedStyle(canvas);
       const rawColor = computedStyle.getPropertyValue('--color-text').trim() || '#ffffff';
-      const lineColor = '77,99, 235'; 
+      const lineColor = '147, 197, 253'; 
 
       for (let i = 0; i < particles.length; i++) {
         const p = particles[i];

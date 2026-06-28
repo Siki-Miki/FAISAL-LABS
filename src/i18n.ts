@@ -5,6 +5,8 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import enTranslation from './locales/en/translation.json';
 import arTranslation from './locales/ar/translation.json';
 import ruTranslation from './locales/ru/translation.json';
+import jpTranslation from './locales/jp/translation.json';
+
 
 const resources = {
   en: {
@@ -16,6 +18,9 @@ const resources = {
   ru: {
     translation: ruTranslation,
   },
+  jp: {
+    translation: jpTranslation,
+  },
 };
 
 i18n
@@ -24,7 +29,7 @@ i18n
   .init({
     resources,
     fallbackLng: 'en',
-    supportedLngs: ['en', 'ar', 'ru'],
+    supportedLngs: ['en', 'ar', 'ru', 'jp'],
     debug: false,
     interpolation: {
       escapeValue: false,
