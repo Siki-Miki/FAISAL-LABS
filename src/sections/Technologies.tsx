@@ -62,7 +62,7 @@ const Technologies: React.FC = () => {
 
         {/* Tech Grid */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-8 gap-4">
-          {techs.map((tech, index) => (
+          {techs.map((tech) => (
             <motion.div
               key={tech.name}
               initial={{ opacity: 0, scale: 0.8 }}

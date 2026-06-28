@@ -87,9 +87,18 @@ function Carousel({
   )
 
   React.useEffect(() => {
-    if (!api || !setApi) return
-    setApi(api)
-  }, [api, setApi])
+  if (!api) return
+  
+  // تغليف الدالة بـ setTimeout ليشتغل في الرندر القادم بدون مشاكل
+  const timer = setTimeout(() => {
+    onSelect(api)
+  }, 0)
+
+  api.on("reInit", onSelect)
+  api.on("select", onSelect)
+
+  return () => clearTimeout(timer)
+}, [api, onSelect])
 
   React.useEffect(() => {
     if (!api) return

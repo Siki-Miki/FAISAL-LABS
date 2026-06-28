@@ -71,7 +71,7 @@ const Testimonials: React.FC = () => {
 
         {/* Testimonials Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {testimonials.map((testimonial, index) => (
+          {testimonials.map((testimonial) => (
             <motion.div
               key={testimonial.name}
               initial={{ opacity: 0, y: 40 }}

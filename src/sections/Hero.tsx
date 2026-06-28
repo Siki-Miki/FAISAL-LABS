@@ -8,11 +8,14 @@ const Hero: React.FC = () => {
   const { t } = useTranslation();
   const [isLoaded, setIsLoaded] = useState(false);
 
-  useEffect(() => {
-    // تركنا فقط هذا السطر لضمان عمل أنميشن النصوص والأزرار بسلاسة عند تحميل الصفحة
+  // الكود الجديد
+useEffect(() => {
+  const timer = setTimeout(() => {
     setIsLoaded(true);
-  }, []);
-
+  }, 0);
+  
+  return () => clearTimeout(timer);
+}, []);
   return (
     <section 
       id="hero" 

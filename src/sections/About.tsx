@@ -82,7 +82,7 @@ const About: React.FC = () => {
         </motion.h3>
 
         <div className="grid md:grid-cols-3 gap-6">
-          {values.map((value, index) => (
+          {values.map((value) => (
             <motion.div
               key={value.title}
               initial={{ opacity: 0, y: 30 }}

@@ -57,7 +57,7 @@ const Team: React.FC = () => {
 
         {/* Team Grid - Centered for single member */}
         <div className="flex justify-center">
-          {members.map((member, index) => (
+          {members.map((member) => (
             <motion.div
               key={member.name}
               initial={{ opacity: 0, y: 40 }}
