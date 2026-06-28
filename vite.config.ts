@@ -5,7 +5,8 @@ import { inspectAttr } from 'kimi-plugin-inspect-react'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './',
+  // تعديل الـ base ليتوافق مع اسم مستودع غيتهوب بدلاً من './'
+  base: '/FAISAL-LABS/',
   plugins: [inspectAttr(), react()],
   server: {
     port: 3000,
